@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'e-Ukraine';
+    src: url('../../fonts/e-Ukraine/e-Ukraine-Regular.eot');
+    src: url('../../fonts/e-Ukraine/e-Ukraine-Regular.eot?#iefix') format('embedded-opentype'), url('../../fonts/e-Ukraine/e-Ukraine-Regular.woff2') format('woff2'), url('../../fonts/e-Ukraine/e-Ukraine-Regular.woff') format('woff'), url('../../fonts/e-Ukraine/e-Ukraine-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'e-Ukraine';
+    src: url('../../fonts/e-Ukraine/e-Ukraine-Medium.eot');
+    src: url('../../fonts/e-Ukraine/e-Ukraine-Medium.eot?#iefix') format('embedded-opentype'), url('../../fonts/e-Ukraine/e-Ukraine-Medium.woff2') format('woff2'), url('../../fonts/e-Ukraine/e-Ukraine-Medium.woff') format('woff'), url('../../fonts/e-Ukraine/e-Ukraine-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'e-Ukraine';
+    src: url('../../fonts/e-Ukraine/e-Ukraine-Bold.eot');
+    src: url('../../fonts/e-Ukraine/e-Ukraine-Bold.eot?#iefix') format('embedded-opentype'), url('../../fonts/e-Ukraine/e-Ukraine-Bold.woff2') format('woff2'), url('../../fonts/e-Ukraine/e-Ukraine-Bold.woff') format('woff'), url('../../fonts/e-Ukraine/e-Ukraine-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-size: 1em;
+    color: #121212;
+    min-width: 320px;
+    font-weight: normal;
+    overflow-x: hidden;
+    font-family: 'e-Ukraine', Arial, sans-serif !important;
+}
+
+div {
+    background: #F2EBD1;
+    border: 1px solid #FF6108;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+p {
+    text-indent: 20px;
+    padding: 10px;
+    text-align: justify
+}
+
+a {
+    color: #FF6108;
+    display: inline;
+}
+
+a:visited {
+    color: #961200
+}
+
+blockquote {
+    font-size: 1em;
+    width: 60%;
+    margin: 50px auto;
+    font-style: italic;
+    color: #555555;
+    padding: 1.2em 30px 1.2em 75px;
+    border-left: 8px solid #FF6108;
+    line-height: 1.6;
+    position: relative;
+    background: #EDEDED;
+}
+
+blockquote::before {
+    content: "\201C";
+    color: #FF6108;
+    font-size: 2em;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}
+
+blockquote::after {
+    content: '';
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+ul li {
+    padding: 10px;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+ol li {
+    padding: 10px;
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+ol {
+    list-style-type: decimal;
+}

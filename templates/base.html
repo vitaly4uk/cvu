@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static i18n %}
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{% static 'img/favicon/favicon.ico' %}">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="{% static 'img/favicon/favicon.ico' %}">
+    <link rel="icon" type="image/png" sizes="196x196" href="{% static 'img/favicon/favicon-192.png' %}">
+    <link rel="icon" type="image/png" sizes="160x160" href="{% static 'img/favicon/favicon-160.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicon/favicon-96.png' %}">
+    <link rel="icon" type="image/png" sizes="64x64" href="{% static 'img/favicon/favicon-64.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon/favicon-32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon/favicon-16.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/favicon/favicon-57.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/favicon/favicon-114.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/favicon/favicon-72.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/favicon/favicon-144.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicon/favicon-60.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/favicon/favicon-120.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/favicon/favicon-76.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/favicon/favicon-152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/favicon-180.png' %}">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="{% static 'img/favicon/favicon-144.png' %}">
+    <meta name="msapplication-config" content="{% static 'img/favicon/browserconfig.xml' %}">
+    {% if request.GET.search %}
+        <meta name='robots' content='noindex, follow'/>{% endif %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Bootstrap Js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"
+            async defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/script.js' %}" async defer></script>
+</head>
+
+<body>
+<header class="p-3 bg-primary text-white border-bottom border-2 border-dark">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center me-2 text-white text-decoration-none">
+                <img src="{% static 'img/logo.png' %}">
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                {% include 'include/root_menu.html' %}
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input type="search" class="form-control bg-secondary" placeholder="{% trans 'Пошук' %}..."
+                       aria-label="{% trans 'Пошук' %}">
+            </form>
+
+            <div class="text-end">
+                {% include 'include/social_links.html' %}
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container bg-white">
+    <div class="row">
+        <div class="col-xl-9 mb-5">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="col-xl-3 pt-5">
+            {% include 'include/right_column.html' %}
+        </div>
+    </div>
+</div>
+<footer class="p-3 bg-primary text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 col-12">
+                <p>Одеська обласна організація</p>
+                <p>«Комітет виборців України»</p>
+                <p>© 1998-{% now "Y" %} — всі права захищені</p>
+            </div>
+            <div class="col-md-4 col-12">
+                <ul class="justify-content-center">
+                    {% include 'include/root_menu.html' %}
+                </ul>
+            </div>
+            <div class="col-md-4 col-12">
+                {% include 'include/social_links.html' %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-12 text-center">
+               <p>{% trans 'Одеса, вул. Садиковська, 25' %}</p>
+            </div>
+            <div class="col-md-4 col-12 text-center">
+                <p>(048) 737-38-98</p>
+            </div>
+            <div class="col-md-4 col-12">
+                <a href="mailto:odesakvu@cvu.od.ua" class="m-auto d-block text-center text-secondary">odesakvu@cvu.od.ua</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
