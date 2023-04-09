@@ -15,6 +15,25 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_REGION_NAME = os.environ.get('AWS_DEFAULT_REGION', 'us-east-2')
+
+EMAIL_BACKEND = 'django_ses.SESBackend'
+DEFAULT_FROM_EMAIL = 'no-replay@cvu.uuuu.org.ua'
+SERVER_EMAIL = 'no-replay@cvu.uuuu.org.ua'
+AWS_SES_REGION_NAME = AWS_REGION_NAME
+AWS_SES_REGION_ENDPOINT = f'email.{AWS_SES_REGION_NAME}.amazonaws.com'
+EMAIL_SUBJECT_PREFIX = '[CVU] '
+
+ADMINS = (
+    ('Igor Fomenko', 'nomax.com.ua@gmail.com'),
+    ('Vitaly Omelchuk', 'vitaly.omelchuk@gmail.com'),
+)
+
+MANAGERS = (
+    # ('Managers', 'cpi.odesa@gmail.com'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
